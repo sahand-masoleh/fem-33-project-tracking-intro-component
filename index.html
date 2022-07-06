@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./style.css">
   <title>Frontend Mentor | Project tracking intro component</title>
 </head>
@@ -14,15 +13,15 @@
   <header class="nav-container">
     <nav class="nav">
       <img src="./images/logo.svg" alt="logo" class="nav__logo">
-      <div class="nav__menu">
-        <input type="checkbox" id="hamburger" class="nav__checkbox">
-        <label for="hamburger" class="nav__hamburger" aria-label="menu toggle">
+      <div class="nav__menu menu">
+        <input type="checkbox" id="hamburger" class="menu__checkbox">
+        <label for="hamburger" class="menu__hamburger" aria-label="menu toggle">
         </label>
-        <ul class="nav__menu">
-          <li class="nav__item">Product</li>
-          <li class="nav__item">Features</li>
-          <li class="nav__item">Pricing</li>
-          <li class="nav__item">Login</li>
+        <ul class="menu__item-container">
+          <li class="menu__item">Product</li>
+          <li class="menu__item">Features</li>
+          <li class="menu__item">Pricing</li>
+          <li class="menu__item">Login</li>
         </ul>
       </div>
     </nav>
@@ -30,8 +29,9 @@
 
   <main class="main">
     <section class="picture">
-      <img src="./images/illustration-devices.svg" alt="">
+      <img src="./images/illustration-devices.svg" alt="a phone and laptop" class="picture__svg">
     </section>
+
     <section class="content">
       <h1 class="title-small">
         <span class="title-small__new">New</span>

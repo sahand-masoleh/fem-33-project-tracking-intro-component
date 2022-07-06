@@ -1,1 +1,53 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap");/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.nav-container {
+  padding: 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.nav__logo {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.nav .menu__checkbox {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+.nav .menu__checkbox:not(:checked) ~ .menu__hamburger {
+  background-image: url(./images/icon-hamburger.svg);
+}
+.nav .menu__checkbox:checked ~ .menu__hamburger {
+  background-image: url(./images/icon-close.svg);
+}
+.nav .menu__checkbox:focus-visible ~ .menu__hamburger {
+  outline: 2px solid;
+}
+.nav .menu__hamburger {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: center/contain no-repeat;
+  cursor: pointer;
+}
+.nav .menu__item-container {
+  display: none;
+  position: absolute;
+}/*# sourceMappingURL=style.css.map */
