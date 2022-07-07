@@ -13,41 +13,26 @@ img {
      object-fit: cover;
 }
 
-body {
-  position: relative;
-  min-height: 100vh;
-}
-body::after {
-  position: absolute;
-  content: "";
-  height: 50%;
-  width: 50%;
-  top: 0;
-  right: 0;
-  border-bottom-left-radius: 5rem;
-  background-color: hsl(207deg, 33%, 95%);
-  z-index: -1;
-}
-
 .nav-container {
   padding: 2.2rem 1.8rem;
   position: relative;
+}
+@media screen and (min-width: 480px) {
+  .nav-container {
+    padding: 3rem 1.8rem;
+  }
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
-}
-@media screen and (min-width: 480px) {
-  .nav {
-    max-width: 70rem;
-    margin: 0 auto;
-  }
+  align-items: center;
+  max-width: 70rem;
+  margin: 0 auto;
 }
 .nav__logo {
   width: 1.5rem;
   height: 1.5rem;
-  margin: auto 0;
 }
 @media screen and (min-width: 480px) {
   .nav__logo {
@@ -105,7 +90,6 @@ body::after {
   left: 0;
   right: 0;
   flex-direction: column;
-  align-items: center;
   gap: 1.8rem;
   background-color: white;
   border-radius: 5px;
@@ -116,8 +100,9 @@ body::after {
   .nav .menu__item-container {
     position: unset;
     margin: 0;
-    padding: 1.8rem 0;
+    padding: 0;
     flex-direction: row;
+    align-items: center;
     gap: 2.2rem;
     background-color: transparent;
     border-radius: 0;
@@ -155,83 +140,6 @@ body::after {
 }
 .nav .menu__item--secondary {
   color: hsl(231deg, 7%, 65%);
-}
-
-.picture {
-  height: 18rem;
-  padding: 1.8rem;
-  padding-right: unset;
-  width: 100%;
-  overflow: hidden;
-}
-.picture__svg {
-  margin-left: -20px;
-}
-
-.content {
-  padding: 2.2rem 1.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.content .title-small {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.content .title-small__new {
-  background-color: hsl(230deg, 29%, 20%);
-  border-radius: 15px;
-  padding: 0.25ch 1.5ch;
-  color: hsl(207deg, 33%, 95%);
-}
-.content .title-small__main {
-  letter-spacing: 0.5ch;
-  color: hsl(231deg, 7%, 65%);
-}
-.content .title-large {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 2.6rem;
-  color: hsl(230deg, 29%, 20%);
-}
-.content__text {
-  font-family: "Barlow", sans-serif;
-  font-weight: 400;
-  font-size: 1.2rem;
-  color: hsl(230deg, 11%, 40%);
-}
-.content__button-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.content__button {
-  flex-grow: 1;
-  cursor: pointer;
-  font-size: 1rem;
-  text-transform: uppercase;
-  border: none;
-  padding: 1.5ch 1.5ch;
-  border-radius: 5px;
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 700;
-}
-.content__button--primary {
-  background-color: hsl(0deg, 100%, 68%);
-  color: hsl(207deg, 33%, 95%);
-}
-.content__button--secondary {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 400;
-  background-color: transparent;
-  color: hsl(231deg, 7%, 65%);
-  letter-spacing: 0.15ch;
 }
 
 .footer__text {

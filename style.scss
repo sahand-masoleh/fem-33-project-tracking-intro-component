@@ -29,6 +29,7 @@ $gap-m: 1rem;
 $gap-l: 1.8rem;
 $gap-xl: 2.2rem;
 $gap-xxl: 3rem;
+$gap-xxxl: 4rem;
 
 $fs-xs: 0.75rem;
 $fs-s: 0.9rem;
@@ -54,40 +55,27 @@ img {
 // STYLES
 
 body {
-	position: relative;
-	min-height: 100vh;
-
-	&::after {
-		position: absolute;
-		content: "";
-		height: 50%;
-		width: 50%;
-		top: 0;
-		right: 0;
-		border-bottom-left-radius: 5rem;
-		background-color: $fc-light;
-		z-index: -1;
-	}
 }
 
 .nav-container {
 	padding: $gap-xl $gap-l;
 	position: relative;
+
+	@media screen and (min-width: 480px) {
+		padding: $gap-xxl $gap-l;
+	}
 }
 
 .nav {
 	display: flex;
 	justify-content: space-between;
-
-	@media screen and (min-width: 480px) {
-		max-width: 70rem;
-		margin: 0 auto;
-	}
+	align-items: center;
+	max-width: 70rem;
+	margin: 0 auto;
 
 	&__logo {
 		width: 1.5rem;
 		height: 1.5rem;
-		margin: auto 0;
 
 		@media screen and (min-width: 480px) {
 			width: 2rem;
@@ -148,7 +136,6 @@ body {
 			left: 0;
 			right: 0;
 			flex-direction: column;
-			align-items: center;
 			gap: $gap-l;
 			background-color: white;
 			border-radius: 5px;
@@ -158,8 +145,9 @@ body {
 			@media screen and (min-width: 480px) {
 				position: unset;
 				margin: 0;
-				padding: $gap-l 0;
+				padding: 0;
 				flex-direction: row;
+				align-items: center;
 				gap: $gap-xl;
 				background-color: transparent;
 				border-radius: 0;
@@ -200,88 +188,6 @@ body {
 			&--secondary {
 				color: $fc-gray;
 			}
-		}
-	}
-}
-
-.picture {
-	height: 18rem;
-	padding: $gap-l;
-	padding-right: unset;
-	width: 100%;
-	overflow: hidden;
-
-	&__svg {
-		margin-left: -20px;
-	}
-}
-
-.content {
-	padding: $gap-xl $gap-l;
-	display: flex;
-	flex-direction: column;
-	gap: $gap-m;
-
-	.title-small {
-		@include ff-con-400;
-		text-transform: uppercase;
-		font-size: $fs-m;
-		display: flex;
-		flex-wrap: wrap;
-		gap: $gap-m;
-
-		&__new {
-			background-color: $fc-very-dark;
-			border-radius: 15px;
-			padding: 0.25ch 1.5ch;
-			color: $fc-light;
-		}
-
-		&__main {
-			letter-spacing: 0.5ch;
-			color: $fc-gray;
-		}
-	}
-
-	.title-large {
-		@include ff-con-700;
-		text-transform: uppercase;
-		font-size: $fs-xxl;
-		color: $fc-very-dark;
-	}
-
-	&__text {
-		@include ff-reg-400;
-		font-size: $fs-l;
-		color: $fc-dark;
-	}
-
-	&__button-container {
-		display: flex;
-		flex-wrap: wrap;
-		width: 100%;
-	}
-
-	&__button {
-		flex-grow: 1;
-		cursor: pointer;
-		font-size: $fs-m;
-		text-transform: uppercase;
-		border: none;
-		padding: 1.5ch 1.5ch;
-		border-radius: 5px;
-
-		@include ff-con-700;
-		&--primary {
-			background-color: $c-p-red;
-			color: $fc-light;
-		}
-
-		&--secondary {
-			@include ff-con-400;
-			background-color: transparent;
-			color: $fc-gray;
-			letter-spacing: 0.15ch;
 		}
 	}
 }
