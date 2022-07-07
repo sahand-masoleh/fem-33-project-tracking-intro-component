@@ -13,14 +13,22 @@ img {
      object-fit: cover;
 }
 
-.nav-container {
-  padding: 2.2rem 1.8rem;
+body {
+  padding: 0 1.8rem;
+  overflow-x: hidden;
+  min-height: 100vh;
   position: relative;
 }
-@media screen and (min-width: 480px) {
-  .nav-container {
-    padding: 3rem 1.8rem;
-  }
+body::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  background-color: hsl(207deg, 33%, 95%);
+  border-bottom-left-radius: 5rem;
+  z-index: -1;
 }
 
 .nav {
@@ -28,7 +36,14 @@ img {
   justify-content: space-between;
   align-items: center;
   max-width: 70rem;
+  padding: 3rem 0;
+  position: relative;
   margin: 0 auto;
+}
+@media screen and (min-width: 480px) {
+  .nav {
+    padding: 4rem 0;
+  }
 }
 .nav__logo {
   width: 1.5rem;
@@ -84,7 +99,6 @@ img {
 }
 .nav .menu__item-container {
   position: absolute;
-  margin: 0 1.8rem;
   padding: 1.8rem;
   top: 100%;
   left: 0;
@@ -142,11 +156,145 @@ img {
   color: hsl(231deg, 7%, 65%);
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+@media screen and (min-width: 480px) {
+  .main {
+    flex-direction: row-reverse;
+    align-items: center;
+    max-width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0;
+  }
+}
+
+.picture {
+  height: 15rem;
+}
+@media screen and (min-width: 480px) {
+  .picture {
+    width: 50%;
+    height: unset;
+  }
+}
+.picture__svg {
+  margin-left: -22px;
+}
+@media screen and (min-width: 480px) {
+  .picture__svg {
+    margin-left: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media screen and (min-width: 480px) {
+  .content {
+    width: 50%;
+  }
+}
+.content .title-small {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+}
+.content .title-small__new {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: hsl(207deg, 33%, 95%);
+  padding: 0.25ch 1.5ch;
+  border-radius: 50px;
+  background-color: hsl(230deg, 29%, 20%);
+}
+.content .title-small__main {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: hsl(231deg, 7%, 65%);
+  letter-spacing: 0.5ch;
+}
+.content .title-large {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .content .title-large {
+    font-size: 4rem;
+  }
+}
+.content__text {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: hsl(230deg, 11%, 40%);
+}
+.content__button-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  .content__button-container {
+    margin-top: 3rem;
+  }
+}
+.content__button {
+  white-space: nowrap;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  padding: 1.5ch 3ch;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 480px) {
+  .content__button {
+    padding: 2ch 4ch;
+  }
+}
+.content__button--primary {
+  background-color: hsl(0deg, 100%, 68%);
+  color: hsl(207deg, 33%, 95%);
+}
+.content__button--primary:hover {
+  opacity: 0.5;
+}
+.content__button--secondary {
+  background-color: transparent;
+  color: hsl(231deg, 7%, 65%);
+  letter-spacing: 0.25ch;
+}
+@media screen and (min-width: 480px) {
+  .content__button--secondary {
+    letter-spacing: 0.5ch;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
 .footer__text {
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 400;
   font-size: 0.75rem;
-  text-align: center;
   color: hsl(231deg, 7%, 65%);
 }
 .footer__text a {
