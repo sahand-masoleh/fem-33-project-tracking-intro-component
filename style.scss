@@ -28,6 +28,7 @@ $fc-light: hsl(207, 33%, 95%);
 $gap-m: 1rem;
 $gap-l: 1.8rem;
 $gap-xl: 2.2rem;
+$gap-xxl: 3rem;
 
 $fs-xs: 0.75rem;
 $fs-s: 0.9rem;
@@ -78,9 +79,20 @@ body {
 	display: flex;
 	justify-content: space-between;
 
+	@media screen and (min-width: 480px) {
+		max-width: 70rem;
+		margin: 0 auto;
+	}
+
 	&__logo {
 		width: 1.5rem;
 		height: 1.5rem;
+		margin: auto 0;
+
+		@media screen and (min-width: 480px) {
+			width: 2rem;
+			height: 2rem;
+		}
 	}
 
 	.menu {
@@ -94,6 +106,10 @@ body {
 			}
 			&:not(:checked) ~ .menu__item-container {
 				display: none;
+
+				@media screen and (min-width: 480px) {
+					display: flex;
+				}
 			}
 
 			&:checked ~ .menu__hamburger {
@@ -106,6 +122,10 @@ body {
 			&:focus-visible ~ .menu__hamburger {
 				outline: 2px solid;
 			}
+
+			@media screen and (min-width: 480px) {
+				display: none;
+			}
 		}
 
 		&__hamburger {
@@ -114,6 +134,10 @@ body {
 			height: 1.5rem;
 			background: center / contain no-repeat;
 			cursor: pointer;
+
+			@media screen and (min-width: 480px) {
+				display: none;
+			}
 		}
 
 		&__item-container {
@@ -129,23 +153,45 @@ body {
 			background-color: white;
 			border-radius: 5px;
 			box-shadow: 0 0.5rem 1rem 0 #00000050;
+			list-style: none;
+
+			@media screen and (min-width: 480px) {
+				position: unset;
+				margin: 0;
+				padding: $gap-l 0;
+				flex-direction: row;
+				gap: $gap-xl;
+				background-color: transparent;
+				border-radius: 0;
+				box-shadow: none;
+			}
 		}
 
 		&__divider {
-			list-style: none;
 			width: 100%;
-			border-right: none;
-			border-bottom: none;
-			border-color: $fc-light;
+			border-top: 1px solid $fc-light;
+			border-left: 1px solid $fc-light;
+
+			@media screen and (min-width: 480px) {
+				width: 0.75ch;
+				height: 0.75ch;
+				border: none;
+				border-radius: 50%;
+				background-color: $fc-gray;
+			}
 		}
 
 		&__item {
 			@include ff-con-700;
 			text-transform: uppercase;
-			list-style: none;
 			font-size: $fs-l;
 			letter-spacing: 0.1ch;
+			margin: 0 auto;
 			cursor: pointer;
+
+			&:hover {
+				text-decoration: underline;
+			}
 
 			&--primary {
 				color: $fc-very-dark;
